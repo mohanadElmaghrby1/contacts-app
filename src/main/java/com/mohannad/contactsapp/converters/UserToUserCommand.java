@@ -13,6 +13,7 @@ public class UserToUserCommand implements Converter<User , UserCommand> {
     @Override
     public UserCommand convert(User user) {
         UserCommand userCommand = new UserCommand();
+        userCommand.setPassword(user.getPassword());
         userCommand.setContacts(user.getContacts());
         userCommand.setId(user.getId());
         userCommand.setPhone(user.getPhone());
