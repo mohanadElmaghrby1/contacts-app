@@ -34,6 +34,7 @@ public class ContactsBootstrap implements ApplicationListener<ContextRefreshedEv
         user.setFirstName("mohannad");
         user.setLastName("Elmaghrby");
         user.setPhone("01014152062");
+        user.setPassword("123");
 
         //create contacts
         Contact momoContact =new Contact();
