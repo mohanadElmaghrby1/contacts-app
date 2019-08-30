@@ -17,10 +17,10 @@ public class Person extends BaseEntity {
     @Column(name = "last_name")
     private String lastName ;
 
-    @Column(name = "phone", unique = true)
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name = "email" , unique = true)
+    @Column(name = "email")
     private String email;
 
     @Lob
