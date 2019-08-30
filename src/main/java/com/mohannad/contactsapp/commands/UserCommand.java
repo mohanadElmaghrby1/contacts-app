@@ -4,6 +4,7 @@ import com.mohannad.contactsapp.model.Contact;
 
 import javax.persistence.Column;
 import javax.persistence.Lob;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,6 +12,7 @@ import java.util.List;
  */
 public class UserCommand {
     private Long id;
+    private String password;
     private String firstName;
     private String lastName ;
     private String phone;
@@ -72,5 +74,26 @@ public class UserCommand {
 
     public void setContacts(List<Contact> contacts) {
         this.contacts = contacts;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserCommand{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", image=" + Arrays.toString(image) +
+                ", contacts=" + contacts +
+                '}';
     }
 }
