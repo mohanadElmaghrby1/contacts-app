@@ -1,12 +1,16 @@
 package com.mohannad.contactsapp.controllers;
 
 import com.mohannad.contactsapp.commands.UserCommand;
+import com.mohannad.contactsapp.model.Contact;
+import com.mohannad.contactsapp.model.User;
 import com.mohannad.contactsapp.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Set;
 
 /**
  * created by mohannad
@@ -21,7 +25,7 @@ public class UserController {
     }
 
     @RequestMapping("/")
-    public String newRecipe(Model model){
+    public String newUser(Model model){
         //create new recipe command and pass it to the view
         //to binding data in
         model.addAttribute("user" , new UserCommand());
@@ -29,10 +33,6 @@ public class UserController {
         return "user/index";
     }
 
-    @RequestMapping("/home")
-    public String homePage(Model model){
-        return "index";
-    }
 
     /*handle the post back from /recipe/new */
     @PostMapping //    @RequestMapping(name = "recipe" , method = RequestMethod.POST) is the same
